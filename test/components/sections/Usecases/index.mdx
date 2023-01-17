@@ -1,0 +1,20 @@
+import { Heading, ShowcaseSection, Subtitle, Title } from "@components/common/showcasesection"
+import { Card } from "@components/common/card"
+import { Button } from "@components/ui/button"
+
+export const Blocks = () => {
+  return <ShowcaseSection>
+      <div className="flex flex-col gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+          <div className="col-span-1 sm:col-span-2 sectionInfo">
+            <Heading theme="sky">Use cases</Heading>
+            <Title size="md">How teams use Motif</Title>
+            
+          </div>
+        </div>
+      </div>
+
+    </ShowcaseSection>
+}
+
+<Blocks />

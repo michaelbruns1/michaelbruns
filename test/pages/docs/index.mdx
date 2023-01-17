@@ -1,0 +1,95 @@
+---
+title: Documentation
+description: Explore guides and tutorials to build beautiful, optimized websites using Motif.
+---
+
+import { Section } from "@components/ui/section"
+import { Bleed } from "@components/ui/bleed"
+import { Button } from "@components/ui/button"
+import { Card } from "@components/common/card"
+import { PlainCard } from "@components/common/PlainCard"
+import { Discord } from "@components/icons/discord"
+import { YouTube } from "@components/icons/youtube"
+import { Twitter } from "@components/icons/twitter"
+import { Play } from "@components/icons/play"
+import { Support } from "@components/icons/support"
+import { BookOpen } from "@components/icons/bookopen"
+import { ClipboardList } from "@components/icons/clipboardlist"
+import { DISCORD_URL, YOUTUBE_URL, TWITTER_URL } from "@utils/constants"
+
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+  <div>
+    ## Quick start
+
+    Learn the basics of Motif by building a website from scratch and publish it to your custom domain.
+
+    <div className="flex">
+      <Button size="smb" variant="pill" href="/docs/quick-start/create-a-project">
+        Get started
+      </Button>
+    </div>
+  </div>
+  <div className="col-span-2">
+    <Bleed>
+    <img className="border border-neutral-100 rounded-md overflow-hidden" src="https://res.cloudinary.com/djp21wtxm/image/upload/v1659370590/i1600x952-hkQ2AsuCQ1_B_hpce5w.png" />
+    </Bleed>
+  </div>
+</div>
+
+## Additional resources
+
+<Bleed>
+  <div className="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <PlainCard
+      theme="sky"
+      title="Guides"
+      description="Walkthroughs on how to build things in Motif"
+      background="white"
+      href="/guides"
+      Icon={BookOpen} />
+    <PlainCard
+      theme="sky"
+      title="Troubleshooting"
+      description="Get answers to common issues you might bump into"
+      background="white"
+      href="/support/troubleshooting"
+      Icon={Support} />
+    <PlainCard
+      theme="sky"
+      title="Changelog"
+      description="Follow all the latest updates and improvements"
+      background="white"
+      href="/changelog"
+      Icon={ClipboardList} />
+    <PlainCard
+      theme="sky"
+      title="Playground"
+      description="Play with Motif, and explore sample demos"
+      background="white"
+      href="/play"
+      Icon={Play} />
+  </div>
+</Bleed>
+
+## Join the community
+
+<div className="not-prose grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-6">
+    <PlainCard
+      href={DISCORD_URL}
+      cta="Join Discord"
+      description="Show your work, ask questions, give feedback"
+      customBackground="#5865F2"
+      Icon={Discord} />
+    <PlainCard
+      href={TWITTER_URL}
+      cta="Follow on Twitter"
+      description="Follow for releases, announcements, demos"
+      customBackground="#1D9BF0"
+      Icon={Twitter} />
+    <PlainCard
+      href={YOUTUBE_URL}
+      cta="Watch on YouTube"
+      description="Watch demos, new feature walkthroughs"
+      customBackground="#FF0000"
+      Icon={YouTube} />
+</div>

@@ -1,0 +1,13 @@
+---
+date: "2022-09-22"
+---
+
+# Features
+
+- #editor Fuzzy search on file names and folders.
+- #editor Improve automatic link insertion shortcut.
+- #editor Explicitly show non-MDX file extensions.
+- #editor Improve component insertion in Markdoc pages.
+- #editor Write project to disk, in addition to two-way sync.
+- #css Improve Monaco Tailwind support.
+- #framework Expose page headings to templates, so that they can be indluded in the search index, for instance.

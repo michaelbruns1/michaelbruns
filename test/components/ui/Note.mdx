@@ -1,0 +1,18 @@
+import cn from "classnames"
+
+export const getClassname = (type) => {
+  switch (type) {
+    case "info": return "bg-sky-50"
+    case "warning": return "bg-amber-100"
+    case "error": return "bg-rose-100"
+  }
+}
+
+export const Note = ({ type, children }) => {
+  return <div className={cn(
+        "note my-8 rounded-md p-4 w-[calc(100%+33px)] ml-[-16px]",
+        getClassname(type)
+      )}>
+      {children}
+    </div>
+}

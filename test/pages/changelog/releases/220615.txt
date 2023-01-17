@@ -1,0 +1,10 @@
+---
+date: "2022-06-15"
+---
+
+# Features
+
+- #framework Motif supports TypeScript, as well well JSX/TSX, JSON and plain text files.
+- #framework In addition to @ imports, relative (e.g. `../components/navbar`) and absolute (`/pages/welcome`) imports are supported.
+- #editor Improved error handlings across all file types.
+- #performance Better performance for large projects (100+ pages).

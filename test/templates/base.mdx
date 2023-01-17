@@ -1,0 +1,74 @@
+import cn from "classnames"
+import { NavigationBar } from "@components/common/navigationbar"
+import { Guides } from "@components/ui/guides"
+import { Section } from "@components/ui/section"
+import { Footer } from "@components/common/footer"
+import { DISCORD_URL, TWITTER_URL, YOUTUBE_URL } from "@utils/constants"
+
+export const HeaderLink = ({ type }) => {
+  let data = undefined
+  switch (type) {
+    case "discord": data = { href: DISCORD_URL, label: "Motif on Discord" }; break;
+    case "twitter": data = { href: TWITTER_URL, label: "Motif on Twitter" }; break;
+    case "youtube": data = { href: YOUTUBE_URL, label: "Motif on YouTube" }; break;
+  }
+  if (!data) {
+    return <></>
+  }
+  return <a className="self-center font-semibold text-smb plainLink xs:justify-self-end" href={data.href} target="_blank">{data.label}</a>
+}
+
+export const Template = ({ title, titleHref, headerLink, showNavbarGuides, path, fixedHeading, noFooter, meta, children }) => {
+  const _title = title || meta?.template?.title
+  const _titleHref = titleHref || meta?.template?.titleHref
+  const _headerLink = headerLink || meta?.template?.headerLink
+  return (
+    <div className="relative prose-pre:ml-[-16px] prose-pre:w-[calc(100%+33px)]">
+      <div className={cn("z-30",
+            {
+              "sticky top-0": fixedHeading,
+              "relative": !fixedHeading,
+            }
+          )}>
+        <NavigationBar
+            showGuides={showNavbarGuides || true}
+            path={path}
+          />
+      </div>
+      { (_title || _headerLink) &&
+        <Section Component="header" padding="sm" full>
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 -mt-2 sm:mt-0">
+            <a className="justify-self-start self-center plainLink font-semibold text-xl" href={_titleHref}><h1>{ _title || <>&nbsp;</>}</h1></a>
+          { _headerLink ? <HeaderLink type={_headerLink}/> : <div />}
+          </div>
+        </Section>
+      }
+      <div>
+        {meta?.template?.wrapInSection ?
+          <Section full>
+            <div className={meta?.template?.prose ? "prose prose-neutral max-w-none" : ""}>
+              {children}
+            </div>
+          </Section>
+          : <>{children}</>
+        }
+      </div>
+      { !noFooter &&
+        <>
+          <Section Component="header" padding="small" full>
+            <div className="h-40" />
+          </Section>
+          <Footer background="extralight" />
+        </>
+      }
+    </div>
+  )
+}
+
+export default (props) => <Template fixedHeading title="Documentation" headerLink="discord" {...props} />
+
+{/* Sample data */}
+
+# Plain template
+
+Some sample text.

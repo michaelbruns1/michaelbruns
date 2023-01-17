@@ -1,0 +1,51 @@
+---
+index: 1
+description: A comprehensive list of available keyboard shortcuts.
+---
+
+import { TwoOfThreeCols } from "@components/ui/gridcolspans"
+import { Keys } from "@components/ui/keys"
+
+<TwoOfThreeCols>
+
+## General
+
+<div className="bg-white">
+| | |
+| :--------| -------: |
+| Search | <Keys cmd char="P" /> |
+| New file | <Keys hatCtrl char="N" /> |
+| New folder | <Keys hatCtrl shift char="N" /> |
+| Next tab | <Keys cmd shift char=">" /> |
+| Previous tab | <Keys cmd shift char="<" /> |
+| Close tab | <Keys hatCtrl char="W" /> |
+| Close other tabs | <Keys hatCtrl shift char="W" /> |
+| Close tabs to the right | <Keys hatCtrl shift char="R" /> |
+| Toggle full screen preview | <Keys cmd char="\" /> |
+| Toggle full screen editor | <Keys cmd shift char="\" /> |
+| Toggle sidebar | <Keys hatCtrl char="B" /> |
+| Trigger render <span className="text-gray-400">(if render on type is off)</span> | <Keys cmd char="S" /> |
+| Toggle render on type | <Keys cmd alt char="S" /> |
+| Delete file <span className="text-gray-400">(in sidebar)</span> | <Keys char="⌫" /> |
+| Rename file <span className="text-gray-400">(in sidebar)</span> | <Keys char="↵" /> |
+</div>
+
+## Editor
+
+<div className="bg-white">
+| | |
+| :--------| -------: |
+| Slash commands | <Keys char="/" /> |
+| Bold | <Keys cmd char="B" /> |
+| Italic | <Keys cmd char="I" /> |
+| Underline | <Keys cmd char="U" /> |
+| Create link | <Keys cmd char="K" /> |
+| Format content | <Keys cmd char="S" /> |
+| Multi-cursor select | <Keys cmd char="D" /> |
+| Duplicate line | <Keys cmd shift char="D" /> |
+| Delete line | <Keys cmd shift char="K" /> |
+| Move line up | <Keys alt char="↑" /> |
+| Move line down | <Keys alt char="↓" /> |
+</div>
+
+</TwoOfThreeCols>

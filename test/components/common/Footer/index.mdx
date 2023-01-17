@@ -1,0 +1,51 @@
+import cn from "classnames"
+import { Section } from "@components/ui/section"
+import { AnimatedLogo } from "@components/common/animatedlogo"
+import { HorizontalGuide } from "@components/ui/guides"
+import { DISCORD_URL, TWITTER_URL, YOUTUBE_URL, PLAYGROUND_PATH, MOTIF_WEBSITE_TEMPLATE_PATH } from "@utils/constants"
+
+export const Footer = ({ sidebar, hideGuides, skipLogoColumn, background, compact }) => {
+  return <div className="relative not-prose">
+      <HorizontalGuide className="z-10 absolute left-0 right-0 top-0" />
+      <Section hideGuides={hideGuides} noPaddingX={sidebar} full background={background} padding={compact ? "md" : "xl"} className="footer text-sm font-medium">
+        <div className={cn(
+          "grid gap-8",
+          {
+            "grid-cols-1 sm:grid-cols-3": sidebar,
+            "grid-cols-1 sm:grid-cols-2 md:grid-cols-4": !sidebar,
+          })}>
+          <div class={skipLogoColumn ? "hidden" : "block"}>
+                <AnimatedLogo mono />
+          </div>
+          <ul class="space-y-2">
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/docs">Documentation</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/community/sites">Templates</a></li>
+            <li><a href="/changelog">Changelog</a></li>
+            <li><a href="/support/troubleshooting">Troubleshooting</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+          </ul>
+          <div className={cn(
+              "block",
+              {
+                "md:hidden": !sidebar,
+                "sm:hidden": sidebar,
+              }
+            )} />
+          <ul class="col-span-1 md:col-span-2 space-y-2">
+            <li>Need help? <a href={DISCORD_URL}>Join our Discord</a>.</li>
+            <li>Try Motif in the <a href={PLAYGROUND_PATH}>playground</a>.</li>
+            <li>Watch walkthroughs on <a href={YOUTUBE_URL}>YouTube</a>.</li>
+            <li>Follow Motif on <a href={TWITTER_URL}>Twitter</a>.</li>
+            <li>&nbsp;</li>
+            <li>This site is built with <a href="/">Motif</a>.</li>
+            <li>Like this design? <a href={MOTIF_WEBSITE_TEMPLATE_PATH}>Copy the template</a>.</li>
+          </ul>
+        </div>
+      </Section>
+    </div>
+}
+
+<Footer background="light" />
+<Footer sidebar skipLogoColumn hideGuides />

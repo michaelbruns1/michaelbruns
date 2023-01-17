@@ -1,0 +1,9 @@
+---
+date: "2021-11-13"
+---
+
+# Features
+
+- #performance Motif is now local-first: everything is stored on your device, and synced remotely when needed and when possible. This means that you can access all your content at any time, regardless of whether you are online or not. And because it's all local, it become incredibly fast.
+- #editor When you hit save, your content will be automatically formatted using Prettier.
+- #billing You can now download all your invoices from the Billing page.

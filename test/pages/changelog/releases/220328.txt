@@ -1,0 +1,9 @@
+---
+date: "2022-03-28"
+---
+
+# Features
+
+- #components We are introducing component libraries, which allow you to share content between projects, or with the community. Similar to NPM, but with 1-click sharing.
+
+- #editor Each tab now has its own URL, for easy sharing of pages when collaborating.

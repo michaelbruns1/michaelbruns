@@ -1,0 +1,120 @@
+---
+index: 5
+description: Let's prepare your website for SEO.
+---
+
+{% twocols %}
+
+SEO stands for "Search Engine Optimization", and is a set of rules and best practices to make your content discoverable and well-ranked by search engines.
+
+Page speed, sitemaps, robot.txt are all automatically taken care of by Motif, so in this section, we'll be focused on metadata, which is a set of tags that give hints about your content to search engines.
+
+## Set a title
+
+By default, the title of your page is given by its file name. For our Index page, we likely want to change that. But the file needs to be called Index in order for it to be accessible at the root path `/`, as explained in the section on [file-based routing](./link-to-a-page). So instead of changing the file name, we will provide a `title` tag. We can do this in the page's _frontmatter_, which is a section at the top of the page delimited by three dashes `---`. We already have a cover defined there, and will just add a line for the title:
+
+```yaml
+---
+title: "Welcome to my blog!"
+cover: "https://tinyurl.com/3m36recy"
+---
+```
+
+## Set a description
+
+Similarly to the title, we can set a page description:
+
+```yaml
+---
+title: "Welcome to my blog!"
+description: "My thoughts on design, code, and magical machines."
+cover: "https://tinyurl.com/3m36recy"
+---
+```
+
+## Use Open Graph tags
+
+In the frontmatter, you can add a section named `meta`, under which you can provide any metadata tags you want. For instance, you can specify Open Graph tags, which provide a standard way for a page to expose data to search engine and on social media. Here is an example with [Twitter cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup) data:
+
+```yaml
+---
+title: "Welcome to my blog!"
+description: "My thoughts on design, code, and magical machines."
+cover: https://tinyurl.com/3m36recy
+meta:
+  "twitter:creator": "@jane_doe"
+---
+```
+
+## Set common tags for all pages
+
+In addition to specific page tags, you can set tags that apply to all the pages of your website. This is done in your Motif project configuration file. Hit {% keys cmd=true char="P" /%} to bring up the instant file search, and type `motif.json` to jump to the file.
+
+{% /twocols %}
+
+{% wrappedimg
+  alt="Jump to file"
+  className="w-full sm:max-w-[440px]"
+  src="https://res.cloudinary.com/djp21wtxm/image/upload/v1659370835/i1600x1099-9vWo1VOOKLn1_wkoyk6.png"
+/%}
+
+{% twocols %}
+
+Alternatively, you can access the file by heading over to your project settings ({% keys cmd=true char="," /%}) and hitting the _Open motif.json_ button.
+
+Your Motif configuration file is a JSON file that looks like this:
+
+```json
+{
+  "templates": {
+    "**/*": "plain",
+    "posts/my-first-post": "blog"
+  },
+  "head": [
+    "<meta name='viewport' content='width=device-width, initial-scale=1.0' />",
+    "<meta name='og:title' content='Motif' />",
+    "<meta name='description' content='My project on Motif!' />",
+    "<link rel='shortcut icon' href='https://res.cloudinary.com/djp21wtxm/image/upload/v1626693463/favicon_lijpjw.ico' />",
+    "<link rel='preconnect' href='https://fonts.googleapis.com' />",
+    "<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />",
+    "<link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap' rel='stylesheet' />",
+    "<link href='https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap' rel='stylesheet' />"
+  ]
+}
+```
+
+The part that we are interested in is the `head` part. It contains a list of HTML tags that will go into all your pages' `<head>` section – which is where metadata belongs. Let's set a Twitter website username here, such as a company Twitter handle, as it will be common to all our content. We also set a global title and description metadata tags, which will be used in case a specific page does not set the tags in their frontmatter:
+
+```json
+{
+  "head": [
+    ...,
+    "<meta name='title' content='My website title' />",
+    "<meta name='description' content='My website description' />",
+    "<meta name='twitter:site' content='@acme_inc' />",
+    ...
+  ]
+}
+```
+
+{% note %}Note that page-specific metadata overwrites the metadata set in your Motif configuration. Only if a tag is not present in your page will it use the one, if present, in your Motif configuration.{% /note %}
+
+## Set a favicon
+
+Finally, let's update the favicon for your pages, which is the small icon that appears in the browser tab. Replace the line that starts with `<link rel='shortcut icon'...` with the following line:
+
+```json
+{
+  "head": [
+    ...,
+    "<link rel='shortcut icon' href='https://tinyurl.com/2evx8eyk' />",
+    ...
+  ]
+}
+```
+
+We're now ready to publish our website!
+
+{% cta label="Next: publish to the web" href="/docs/quick-start/publish-to-the-web" /%}
+
+{% /twocols %}

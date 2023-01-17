@@ -1,0 +1,29 @@
+import { Heading, ShowcaseSection, Subtitle, Title } from "@components/common/showcasesection"
+import { Button } from "@components/ui/button"
+import { Card } from "@components/common/card"
+import { Runtime } from "@components/common/animatedicons/runtime"
+import { Host } from "@components/common/animatedicons/host"
+import { Editor } from "@components/common/animatedicons/editor"
+import { Content } from "@components/common/animatedicons/content"
+
+export const AllInOne = () => {
+  return <ShowcaseSection theme="sky">
+      <div className="flex flex-col gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+          <div className="col-span-1 sm:col-span-2 md:col-span-3 sectionInfo">
+            <Heading theme="sky" size="md">An all-in-one platform</Heading>
+            <Title theme="sky" size="md">The fastest way for developers to publish content</Title>
+            <Subtitle theme="sky">You don't need to choose between a great developer experience and a great authoring experience. Motif brings both together.</Subtitle>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 mt-8">
+        <Card title="A collaborative editor" Icon={Editor}>Open the browser and start typing, alone or in teams. Based on Monaco, which powers Visual Studio Code. With support for IntelliSense and Remark plugins. Great for cross-disciplinary teams.</Card>
+        <Card title="A fast JS runtime" ctaHref="/pricing" Icon={Runtime}>Compiles any JavaScript, TypeScript, React, Markdown, MDX, Markdoc in real time. Supports ES module imports, so you can use any JS library from the web, without NPM.</Card>
+        <Card title="A fast hosting platform" ctaHref="/pricing" Icon={Host}>Preview your content as you type. When ready, hit publish. No PRs, no deployment steps. Motif pushes your site to an edge CDN in seconds, and optimizes assets, for optimal performance.</Card>
+        <Card title="Supercharged for content" ctaHref="/pricing" Icon={Content}>Unlike most IDEs, Motif streamlines the editing experience for content, with baked in drag-and-drop, custom domains, SEO, templates, components, slash commands, and distraction-free writing.</Card>
+        </div>
+      </div>
+    </ShowcaseSection>
+}
+
+<AllInOne />

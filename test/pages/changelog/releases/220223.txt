@@ -1,0 +1,9 @@
+---
+date: "2022-02-23"
+---
+
+# Features
+
+- #resources We have created a guide showing you how to import content from Motif into Webflow, giving you a better writing experience for long-form content, all while maintaining your Webflow assets and design intact.
+- #performance Pages now load much faster thanks to reduced JS bundle sizes and code splitting.
+- #community Join the Motif community on Discord and share your projects, questions, and feedback.

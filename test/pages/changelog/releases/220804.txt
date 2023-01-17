@@ -1,0 +1,13 @@
+---
+date: "2022-08-04"
+---
+
+# Features
+
+- #editor The Motif editor can be customized using Remark plugins, adding capabilities such as spell checking, readability warnings and stylistic errors.
+- #framework When uploading an image through Motif, it will automatically benefit from Next.js image optimizations, for faster downloads and reduced layout shift. This improves performance metrics and SEO.
+- #framework When using Markdown links between pages, Motif will prefetch the content for faster page transitions, using Next.js links.
+- #framework Templates are persistent across page transitions, and will therefore keep their state. This is useful for instance for sidebar menus, to keep the scroll position.
+- #framework When using some popular JavaScript packages, such as React and Lodash, in your pages, Motif will shim them to reduce the size of your published pages and improve load speed.
+- #data The Motif platform has a fallback datastore, in case of database downtime during a page rebuild process.
+- #components Motif now has an out-of-the-box search component, which is also part of the docs templates.

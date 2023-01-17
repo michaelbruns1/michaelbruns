@@ -1,0 +1,43 @@
+---
+index: 4
+description: Exposing your site's page structure to search engines.
+---
+
+{% twocols %}
+
+A sitemap is an XML file that lists the pages of your site that should be exposed to search engine crawlers, so that they can index your content intelligently.
+
+```xml
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com</loc>
+  </url>
+  <url>
+    <loc>https://example.com/about</loc>
+  </url>
+  <url>
+    <loc>https://example.com/blog</loc>
+  </url>
+</urlset>
+```
+
+On Motif, the sitemap is automatically generated from the set of pages you've marked as public, so you don't need to do anything further to set it up. You can view your sitemap by heading to your public site, and navigating to `/sitemap.xml`, for instance `https://my-domain.com/sitemap.xml`.
+
+## Excluding paths
+
+If you wish to exclude the paths of some public pages from the sitemap, you can do so by adding a `sitemap.excludePaths` entry in your `motif.json` configuration file. Here is an example:
+
+```json
+{
+  "sitemap": {
+    "excludePaths": [
+      "docs/do-not-index",
+      "public-drafts/**/*"
+    ]
+  }
+}
+```
+
+You can specify the paths either explicity, or using a [glob syntax](<https://en.wikipedia.org/wiki/Glob_(programming)>), similar to the one used for template mappings, as discussed in the [Motif configuration](/docs/configuration/motif-config) article.
+
+{% /twocols %}

@@ -1,0 +1,14 @@
+---
+date: "2021-06-28"
+---
+
+# Features
+
+- #data We are introducing projects, which allow you to better organize your content. Each project has its own subdomain, and can be assigned its own custom domain. Furthermore, instead of sharing single pages, you can now share an entire project.
+- #data We are making it easier to access your content, by putting all your project pages into the sidebar, and introducing folders to better organize them.
+- #editor The editor is now tab-based, so that you can work on several open files at the same time.
+- #framework With templates, you can create shared designs to be reused across sets of pages.
+- #framework Motif now supports ES modules, allowing you to import your favorite JavaScript modules from the web straight into a page, with no further setup.
+- #framework Motif now supports a custom Tailwind configuration, and includes the latest Tailwind compiler with JIT support.
+- #css A global CSS file can now be included for things that are currently cumbersome to do in Tailwind, such as keyframe animations.
+- #performance We have optimized the in-browser build process even further, to achieve near-perfect Lighthouse scores, which indicate among others how fast your pages are loading for your visitors.
